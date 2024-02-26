@@ -1,9 +1,8 @@
 <?php
 
-use App\Livewire\CartComponent;
-use App\Livewire\CheckoutComponent;
-use App\Livewire\HomeComponent;
-use App\Livewire\ShopComponent;
+use App\Http\Controllers\Front\FrontendController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,14 +18,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('');
+//     return view('welcome');
 // });
 
-Route::get('/',HomeComponent::class);
-Route::get('/shop',ShopComponent::class);
-Route::get('/cart',CartComponent::class);
-Route::get('/checkout',CheckoutComponent::class);
+Route::get('/',[FrontendController::class,'index']);
+Route::get('/contact',[FrontendController::class,'contact']);
+Route::get('/checkout',[FrontendController::class,'checkout']);
+Route::get('/cart',[FrontendController::class,'cart']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('user/login',[UserController::class,'index']);

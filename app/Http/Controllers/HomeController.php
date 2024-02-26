@@ -15,14 +15,14 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+        
+    public function index(){
+        
+    }
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+  
 }

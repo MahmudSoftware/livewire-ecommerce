@@ -43,9 +43,9 @@
           <ul class="list-unstyled">
             <li><a href="#"><i class="icon fa fa-user"></i>My Account</a></li>
             <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
-            <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
-            <li><a href="/checkout"><i class="icon fa fa-check"></i>Checkout</a></li>
-            <li><a href="#"><i class="icon fa fa-lock"></i>Login</a></li>
+            <li><a href="/cart" wire:navigate><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+            <li><a href="/checkout" wire:navigate><i class="icon fa fa-check"></i>Checkout</a></li>
+            <li><a href="user/login" wire:navigate><i class="icon fa fa-lock"></i>Login</a></li>
           </ul>
         </div>
         <!-- /.cnt-account -->
@@ -83,7 +83,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="assets/images/logo.png" alt="logo"> </a> </div>
+          <div class="logo"> <a href="/" wire:navigate> <img src="assets/images/logo.png" alt="logo"> </a> </div>
           <!-- /.logo -->
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -379,7 +379,7 @@
 </header>
 
 <!-- ============================================== HEADER : END ============================================== -->
-{{ $slot }}
+@yield('content')
 <!-- /#top-banner-and-menu -->
 
 <!-- ============================================================= FOOTER ============================================================= -->

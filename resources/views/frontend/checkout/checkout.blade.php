@@ -1,4 +1,5 @@
-
+@extends('frontend.master')
+@section('content')
 <div class="body-content">
     <div class="container">
        <div class="checkout-box ">
@@ -250,3 +251,4 @@
     </div>
     
  </div>
+ @endsection
